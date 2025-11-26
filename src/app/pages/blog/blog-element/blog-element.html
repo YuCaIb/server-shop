@@ -1,21 +1,20 @@
-<div class=" flex bg-[#faf9f7] ">
+<div class=" flex bg-[#faf9f7] items-center ">
   <div class=" w-2/3 grid grid-cols-12">
-    <div class="col-span-8" >
-      <h1 class="font-extrabold text-3xl m-5  text-emerald-500">name</h1>
+    <div class="col-span-12" >
+      <h1 class="font-extrabold text-3xl m-5  text-emerald-500">{{ product.name }}</h1>
     </div>
 
-    <div>
-      <span class="m-3">content</span>
+    <div class="col-span-12">
+      <span class="m-3">{{ product.blog }}</span>
     </div>
 
-    <div class="bg-red-600">
-      123
+    <div class="col-span-12">
+      <app-button  label="go shopping cart" [routerLink]="['/cart-details',product.product_id]"/>
     </div>
-      <app-button  class="" label="go shopping cart"/>
 
   </div>
   <div class="w-1/3">
-    <img src="https://placehold.co/100" alt="..." class="w-40 h-auto rounded-md shadow m-6">
+    <img [src]="product.photo_url" alt="..." class="w-40 h-auto rounded-md shadow m-6">
   </div>
 
 </div>

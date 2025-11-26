@@ -1,4 +1,5 @@
-<div class=" block m-auto bg-[#faf9f7] w-[90vw] shadow-2xl">
+<!--
+<div class=" block m-auto bg-[#faf9f7] w-[90vw] shadow-2xl shadow-emerald-500">
   <div class="mb-10">
     <h1 class="font-extrabold text-3xl m-5  text-emerald-500">Contact</h1>
     <span class="text-2xl font-semibold">
@@ -6,20 +7,101 @@
     </span>
   </div>
   <div>
-    <form class="flex flex-col gap-4" action="">
+    <form class="flex flex-col gap-4" [formGroup]="applyForm" (submit)="submitApplication()"  action="">
       <div class="flex items-center">
+        @if (applyForm.get('name')?.invalid){
+          <label class="text-red-600" for="name"> min 3 len char!</label>
+        }
         <label class="w-20" for="name">Name </label>
-        <input class="flex-1 border p-1 border-amber-400 rounded-2xl " type="text" id="name" placeholder="your name">
+        <input class="flex-1 border p-1 border-amber-400 rounded-2xl " type="text" id="name" placeholder="your name" formControlName="name">
       </div>
       <div class="flex items-center">
-        <label class="w-20" for="msg">Message </label>
-        <input class="flex-1 border p-1 border-amber-400 rounded-2xl" type="text" name="" id="msg" placeholder="your message">
+        @if (applyForm.get('msg')?.invalid){
+          <label class="text-red-600" for="msg"> min 120 char- max 550 char!</label>
+        }
+        <label class="w-20" for="msg">Message</label>
+        <input class="flex-1 border p-1 border-amber-400 rounded-2xl" type="text" name="" id="msg" placeholder="your message" formControlName="msg">
       </div>
       <div class="flex items-center">
+        @if (applyForm.get('email')?.invalid){
+          <label class="text-red-600" for="mail"> please enter a valid e-mail!</label>
+        }
         <label  class="w-20" for="mail">e-mail </label>
-        <input class="flex-1 border p-1 border-amber-400 rounded-2xl" type="email" id="mail" placeholder="example@hotmail.com">
+        <input class="flex-1 border p-1 border-amber-400 rounded-2xl" type="email" id="mail" placeholder="example@hotmail.com" formControlName="email">
       </div>
       <app-button label="Submit"/>
+    </form>
+  </div>
+</div>
+-->
+
+
+<div class="block m-auto bg-[#faf9f7] w-[90vw] shadow-2xl shadow-emerald-500">
+  <div class="mb-10">
+    <h1 class="font-extrabold text-3xl m-5 text-emerald-500">Contact</h1>
+    <span class="text-2xl font-semibold">
+      Feel Free to contact us for any collab and request
+    </span>
+  </div>
+
+  <div>
+    <!-- (submit) yerine (ngSubmit) kullanılıyor ki sayfa reload olmasın -->
+    <form
+      class="flex flex-col gap-4"
+      [formGroup]="applyForm"
+      (ngSubmit)="submitApplication()"
+    >
+
+      <!-- NAME -->
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2">
+          <label class="w-20" for="name">Name</label>
+          <input
+            class="flex-1 border p-1 border-amber-400 rounded-2xl"
+            type="text"
+            id="name"
+            placeholder="your name"
+            formControlName="name"
+          >
+        </div>
+        @if (applyForm.get('name')?.invalid && applyForm.get('name')?.touched) {
+          <p class="text-red-600 text-sm mt-1">min 3 len char!</p>
+        }
+      </div>
+      <div class="flex flex-col">
+        <div class="flex items-center gap-2">
+          <label class="w-20" for="mail">e-mail</label>
+          <input
+            class="flex-1 border p-1 border-amber-400 rounded-2xl"
+            type="email"
+            id="mail"
+            placeholder="example@hotmail.com"
+            formControlName="email"
+          >
+        </div>
+        @if (applyForm.get('email')?.invalid && applyForm.get('email')?.touched) {
+          <p class="text-red-600 text-sm mt-1">please enter a valid e-mail!</p>
+        }
+      </div>
+      <div class="flex flex-col">
+        <div class="flex items-start gap-2">
+          <label class="w-20 mt-1" for="msg">Message</label>
+          <textarea
+            class="flex-1 border p-2 border-amber-400 rounded-2xl min-h-32 resize-y"
+            id="msg"
+            placeholder="your message"
+            formControlName="msg"
+          ></textarea>
+        </div>
+        @if (applyForm.get('msg')?.invalid && applyForm.get('msg')?.touched) {
+          <p class="text-red-600 text-sm mt-1">min 120 char - max 550 char!</p>
+        }
+      </div>
+      @if (applyForm.valid) {
+        <app-button label="Submit" type="submit"/>
+      } @else {
+        <app-button label="Submit" type="submit"  [disabled]="true" />
+      }
     </form>
   </div>
 </div>
