@@ -1,0 +1,49 @@
+<!--/*. do this : https://www.youtube.com/watch?v=6lnWjpZjPOM*/-->
+
+<!--<header>
+  <nav class="flex justify-between bg-white items-center shadow shadow-emerald-200
+              font-bold text-emerald-500">
+    <div>
+      <a href="#"> <img class="w-14"
+                        src="https://static.vecteezy.com/system/resources/previews/020/190/945/non_2x/flower-icon-free-vector.jpg"
+                        alt="..."></a>
+    </div>
+    <div>
+           <div>
+             <ul class="flex items-centers gap-[4vw]">
+               <li class="hover:underline decoration-[#eee8aa]"><a href="/blog">Blog</a></li>
+               <li class="hover:underline decoration-[#eee8aa]"><a href="/about">About</a></li>
+               <li class="hover:underline decoration-[#eee8aa]"><a href="/basket">Basket()</a></li>
+               <li class="hover:underline decoration-[#eee8aa]"><a href="/contact">Contact</a></li>
+             </ul>
+           </div>
+
+      <div>
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+    </div>
+
+  </nav>
+</header>-->
+
+<header class="bg-emerald-50" >
+  <nav class=" px-12 h-16 flex items-center justify-between shadow shadow-emerald-200
+              font-bold text-emerald-500" >
+    <a href="#" class="text-2xl font-bold px-2 py-1" >Server</a>
+
+    <div class="dorpdown-menu absolute -top-full left-0 bg-emerald-50/75 w-full flex flex-col gap-6 items-center py-2 text-lg" [ngClass]="{'top-16': isDropdownOpen}" )>
+      <ul class="flex flex-col items-center gap-6">
+        <li class="hover:underline decoration-[#eee8aa]"><a href="/blog">Blog</a></li>
+        <li class="hover:underline decoration-[#eee8aa]"><a href="/about">About</a></li>
+        <li class="hover:underline decoration-[#eee8aa]"><a href="/basket">Basket()</a></li>
+        <li class="hover:underline decoration-[#eee8aa]"><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="toggle-button">
+      <i class="fa-solid fa-bars fa-lg" (click)="toggleDropdown()"></i>
+    </div>
+  </nav>
+</header>
+
+
