@@ -1,8 +1,12 @@
 <section>
-  <app-header/>
+  <section class=" not-lg:hidden">
+    <app-header/>
+  </section>
+  <section class=" lg:hidden">
+    <app-mobile-header/>
+  </section>
   <section>
     <router-outlet/>
-    
   </section>
 </section>
 

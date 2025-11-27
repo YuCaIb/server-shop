@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Button} from '../../components/button/button';
 import {Products} from '../../interfaces/products';
 import {ProductsService} from '../../services/products-service';
@@ -14,13 +14,13 @@ import {RouterLink} from '@angular/router';
   templateUrl: './main-shop.html',
 })
 export class MainShop {
-
+  productService = inject(ProductsService);
   products: Products[] = [];
 
   constructor(private productsService: ProductsService) {
   this.productsService.getProducts().then((products: (Products[])) => {
     this.products = products;
-    console.log(this.products);
+    /*console.log(this.products);*/
   });
   }
 }

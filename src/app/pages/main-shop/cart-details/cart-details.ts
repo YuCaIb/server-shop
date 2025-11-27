@@ -14,6 +14,7 @@ import {ProductsService} from '../../../services/products-service';
 })
 export class CartDetails {
   route: ActivatedRoute = inject(ActivatedRoute);
+  productService = inject(ProductsService);
 
   product: Products | undefined;
 
@@ -24,4 +25,5 @@ export class CartDetails {
     });
   }
 
+  protected readonly ProductsService = ProductsService;
 }

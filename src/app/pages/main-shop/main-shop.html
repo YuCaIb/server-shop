@@ -1,26 +1,30 @@
 <h1 class="font-extrabold text-3xl m-5  text-emerald-500">Products</h1>
 
-<div class="grid grid-cols-12 gap-0">
-  @for (product of products; track product.product_id)
-  {
-    <div class="col-span-2 cursor-pointer"  [routerLink]="['/cart-details',product.product_id]">
-      <div class="block shadow-2xl w-50 mt-5 ml-5">
-        <div class="grid grid-cols-12 12bg-amber-200">
+<div class="grid grid-cols-2 xl:grid-cols-6 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-9">
+  @for (product of products; track product.product_id) {
+    <div class=" 2xl:col-span-1 xl:col-span-1 lg:col-span-1 sm:col-span-1 md:col-span-1">
+      <div class="block shadow-2xl w-35 md:w-50 lg:w-50 mt-5 ml-5">
+
+        <div class="grid grid-cols-12 " [routerLink]="['/cart-details',product.product_id]">
+
           <div class="col-span-12">
-            <img [src]="product.photo_url" width="200px" height="130px" alt="...">
+            <img class=" lg:w-[200px] lg:h-[160px] sm:w-[200px] sm:h-[160px]" [src]="product.photo_url" alt="...">
           </div>
 
-          <div class="col-span-12 text-center">
-            {{ product.name}}
+          <div class="col-span-12">
+            <span class="line-clamp-1">{{ product.name }} </span>
           </div>
 
           <div class="col-span-12 text-left">
-            <span>{{product.alt}}</span>
+            <span class="line-clamp-1">{{ product.alt }}</span>
           </div>
+
           <div class="col-span-12">
-            <app-button label="add to basket"/>
+            <app-button  (click)="productService.addToBasket(product) ;$event.stopPropagation()" label="add"/>
           </div>
+
         </div>
+
       </div>
     </div>
   }

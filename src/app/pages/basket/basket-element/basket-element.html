@@ -1,18 +1,17 @@
-
 <div class="flex  bg-[#faf9f7] m-3.5">
   <div class="w-2/3">
     <div>
-      <span>name</span>
+      <span>{{ product.name }}</span>
     </div>
     <div>
-      <span>quantity : a x</span>
+      <span>quantity : {{product.quantity}}</span>
     </div>
     <div>
-      <span>total: $</span>
+      <span>total: {{product.price}}$</span>
     </div>
 
     <div>
-      <app-button label="discard"/>
+      <app-button (click)="productService.discardFromBasket(product.product_id)" label="discard"/>
     </div>
   </div>
 

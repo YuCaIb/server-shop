@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {ProductsService} from '../../services/products-service';
 
 @Component({
   selector: 'app-header',
   imports: [],
   templateUrl: './header.html',
-  styleUrl: './header.css',
 })
 export class Header {
+  productService = inject(ProductsService);
 
 }
