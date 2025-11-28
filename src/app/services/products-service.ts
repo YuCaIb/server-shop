@@ -60,6 +60,10 @@ export class ProductsService {
     return total
   }
 
+  getKdv(){
+    return ((this.getTotal()) * 0.20)
+  }
+
   getTotal(): number {
     const basket_json = localStorage.getItem("basket-products");
     if (basket_json == null) return 0;

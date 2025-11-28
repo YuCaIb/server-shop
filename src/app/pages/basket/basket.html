@@ -1,9 +1,12 @@
 <div class="flex mt-10 m-auto w-[90vw] shadow shadow-emerald-100" >
-  <div class="w-2/3">
+  <div class="w-1/3">
    Total :  {{ productService.getTotal()}}
   </div>
   <div class="w-1/3">
     <app-button (click)="productService.saveBasket()" label="saveBasket"/>
+  </div>
+  <div class="w-1/3">
+    <app-button label="go to payment" routerLink="/payment"/>
   </div>
 </div>
 
