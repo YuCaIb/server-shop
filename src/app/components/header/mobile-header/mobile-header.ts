@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {NgClass} from '@angular/common';
+import {ProductsService} from '../../../services/products-service';
 
 @Component({
   selector: 'app-mobile-header',
@@ -10,6 +11,8 @@ import {NgClass} from '@angular/common';
   styleUrl: './mobile-header.css',
 })
 export class MobileHeader {
+
+  productService = inject(ProductsService);
 
  isDropdownOpen: boolean = false;
 

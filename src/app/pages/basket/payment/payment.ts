@@ -4,17 +4,22 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {ContactService} from '../../../services/contact-service';
 import {Button} from '../../../components/button/button';
 import {onErrorResumeNextWith} from 'rxjs';
+import {Modal} from '../../../components/modal/modal';
 
 @Component({
   selector: 'app-payment',
   imports: [
     Button,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Modal
   ],
   templateUrl: './payment.html',
   styleUrl: './payment.css',
 })
 export class Payment {
+  payDisabled : boolean = true;
+  checkboxDisabled: boolean = true;
+
   productService = inject(ProductsService);
 
   paymentForm = new FormGroup({
@@ -37,25 +42,11 @@ export class Payment {
     console.log('FORM VALUE:', this.paymentForm.value);
     console.log('FORM STATUS:', this.paymentForm.status);
 
-    Object.keys(this.paymentForm.controls).forEach((key) => {
-      const control = this.paymentForm.get(key);
-      console.log(
-        key,
-        '=> value:',
-        control?.value,
-        'errors:',
-        control?.errors
-      );
-    });
-
     if (this.paymentForm.invalid) {
       console.log("form validation failed");
       console.log(this.paymentForm);
       return;
     }
-
-
-
 
     this.applicaton(
       this.paymentForm.value.name ?? '',
@@ -106,5 +97,12 @@ export class Payment {
     }
   }
 
+  conditionsAccepted: boolean = false;
+
+
+  acceptCondition(){
+    this.conditionsAccepted = true;
+    console.log("oldu");
+  }
 
 }
