@@ -3,10 +3,11 @@ import { RouterOutlet } from '@angular/router';
 import {Header} from './components/header/header';
 import {MainShop} from './pages/main-shop/main-shop';
 import {MobileHeader} from './components/header/mobile-header/mobile-header';
+import {Footer} from './components/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, MobileHeader],
+  imports: [RouterOutlet, Header, MobileHeader, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

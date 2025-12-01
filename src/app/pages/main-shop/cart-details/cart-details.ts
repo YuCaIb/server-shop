@@ -10,7 +10,6 @@ import {ProductsService} from '../../../services/products-service';
     Button
   ],
   templateUrl: './cart-details.html',
-  styleUrl: './cart-details.css',
 })
 export class CartDetails {
   route: ActivatedRoute = inject(ActivatedRoute);
