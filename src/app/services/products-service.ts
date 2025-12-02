@@ -61,7 +61,7 @@ export class ProductsService {
   }
 
   getKdv(){
-    return ((this.getTotal()) * 0.20)
+    return ((this.getTotal()) * 0.20).toFixed(2)
   }
 
   getTotal(): number {
@@ -73,6 +73,10 @@ export class ProductsService {
       total = (json[i].price * json[i].quantity) + total;
     }
     return total
+  }
+
+  payTotal(): number {
+    return ((this.getTotal()) * 0.20 + this.getTotal())
   }
 
   async saveBasket() {

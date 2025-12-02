@@ -4,13 +4,15 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {ContactService} from '../../../services/contact-service';
 import {Button} from '../../../components/button/button';
 import {Modal} from '../../../components/modal/modal';
+import {BasketElement} from '../basket-element/basket-element';
 
 @Component({
   selector: 'app-payment',
   imports: [
     Button,
     ReactiveFormsModule,
-    Modal
+    Modal,
+    BasketElement
   ],
   templateUrl: './payment.html',
   styleUrl: './payment.css',
@@ -27,7 +29,7 @@ export class Payment {
     surname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(50), ContactService.spaceValidator]),
     cardNumber: new FormControl('', [Validators.required, Validators.pattern(/^\d{16}$/), Validators.nullValidator,]),
     expireMonth: new FormControl('01', [Validators.required]),
-    expireYear: new FormControl('2025', [Validators.required, Validators.pattern('$$/^\\\\d+$/$$')]),
+    expireYear: new FormControl('2025', [Validators.required]),
     cvv: new FormControl('', [Validators.required, Validators.pattern(/^\d{3}$/),]),
     email: new FormControl('', [Validators.required, Validators.email, /*ContactService.spaceValidator*/]),
     adress: new FormControl('', [Validators.required]),

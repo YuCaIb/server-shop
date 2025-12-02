@@ -11,7 +11,7 @@
 </div>
 
 <div class=" grid grid-cols-2 gap-4 mt-5 m-auto w-[90vw] shadow-2xl shadow-emerald-200">
-@for (product of productService.getBasketItems(); track product.product_id) {
-   <app-basket-element [product]="product" />
-}
+  @for (product of productService.getBasketItems(); track product.product_id) {
+    <app-basket-element [product]="product" />
+  }
 </div>
