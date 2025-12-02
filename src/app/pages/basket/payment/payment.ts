@@ -3,7 +3,6 @@ import {ProductsService} from '../../../services/products-service';
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {ContactService} from '../../../services/contact-service';
 import {Button} from '../../../components/button/button';
-import {onErrorResumeNextWith} from 'rxjs';
 import {Modal} from '../../../components/modal/modal';
 
 @Component({
@@ -19,6 +18,7 @@ import {Modal} from '../../../components/modal/modal';
 export class Payment {
   payDisabled : boolean = true;
   checkboxDisabled: boolean = true;
+  conditionsAccepted: boolean = false;
 
   productService = inject(ProductsService);
 
@@ -97,12 +97,16 @@ export class Payment {
     }
   }
 
-  conditionsAccepted: boolean = false;
 
 
   acceptCondition(){
     this.conditionsAccepted = true;
-    console.log("oldu");
+
+    if(this.conditionsAccepted) this.checkboxDisabled = false;
+  }
+
+  checkBoxConfirmation(){
+  this.payDisabled = false;
   }
 
 }

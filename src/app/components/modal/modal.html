@@ -101,8 +101,8 @@ Make sure you split the terms to small paragraphs. Explanation: It's people lost
 <input type="checkbox" id="modal-toggle" class="peer hidden"/>
 
 <label for="modal-toggle"
-       class="text-black bg-blue-500 cursor-pointer px-4 py-2 rounded">
-  Toggle modal
+       class="font-bold cursor-pointer underline">
+  Terms and Conditions
 </label>
 
 <div class="fixed inset-0 bg-black/50 hidden peer-checked:block"></div>
@@ -113,14 +113,32 @@ Make sure you split the terms to small paragraphs. Explanation: It's people lost
     <p class="text-sm text-gray-600 mb-4">
       <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
           vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
-        </span>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
+          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
+          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
+          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
+          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
+          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
+
+      </span>
     </p>
+    <div class="flex flex-row justify-between">
+      <label for="modal-toggle"
+             (click)="paymentS.acceptCondition()"
+             class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer">
+        Agree
 
-    <label for="modal-toggle"
-           (click)="paymentS.acceptCondition()"
-           class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer">
-      Agree
+      </label>
 
-    </label>
+      <label for="modal-toggle"
+             class=" bg-red-500 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer">
+        Decline
+      </label>
+    </div>
+
   </div>
 </div>
