@@ -7,6 +7,7 @@ import {Basket} from './pages/basket/basket';
 import {CartDetails} from './pages/main-shop/cart-details/cart-details';
 import {Payment} from './pages/basket/payment/payment';
 import {Modal} from './components/modal/modal';
+import {Experience} from './experience/experience';
 
 export const routes: Routes = [
   {path: '', component: MainShop, title: 'Shop'},
@@ -16,5 +17,5 @@ export const routes: Routes = [
   {path: 'basket', component: Basket, title: 'basket'},
   {path: 'cart-details/:product_id', component: CartDetails, title: 'CartDetails'},
   {path: 'payment', component: Payment, title: 'Payment'},
-  {path: 'modal', component: Modal, title: 'Modal'},
+  {path: 'experience', component: Experience, title: 'Experience'},
 ];

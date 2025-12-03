@@ -97,7 +97,6 @@ Make sure you split the terms to small paragraphs. Explanation: It's people lost
   </div>
 </div>-->
 
-
 <input type="checkbox" id="modal-toggle" class="peer hidden"/>
 
 <label for="modal-toggle"
@@ -105,40 +104,55 @@ Make sure you split the terms to small paragraphs. Explanation: It's people lost
   Terms and Conditions
 </label>
 
-<div class="fixed inset-0 bg-black/50 hidden peer-checked:block"></div>
+<div
+  class="fixed inset-0 hidden peer-checked:flex items-center justify-center bg-black/40"
+>
+  <div
+    class="bg-white rounded-lg shadow-lg p-6 w-[90vw] max-w-xl max-h-[80vh] flex flex-col"
+  >
 
-<div class="fixed inset-0 items-center justify-center hidden peer-checked:flex">
-  <div class="bg-white rounded-lg shadow-lg p-6 w-80">
-    <h2 class="text-lg font-semibold mb-4">Terms of Service</h2>
-    <p class="text-sm text-gray-600 mb-4">
-      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
-          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
-          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
-          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
-          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
-          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui, a iaculis odio placerat
-          vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit amet ipsum. Duis commodo nibh et rhoncus mattis.
+    <div class="flex-1">
+      <h2 class="text-lg font-semibold mb-4">Terms of Service</h2>
 
-      </span>
-    </p>
-    <div class="flex flex-row justify-between">
-      <label for="modal-toggle"
-             (click)="paymentS.acceptCondition()"
-             class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer">
+      <div class="text-sm text-gray-600 overflow-y-auto pr-2 max-h-[60vh]">
+        <span>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui,
+          a iaculis odio placerat vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit
+          amet ipsum. Duis commodo nibh et rhoncus mattis.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui,
+          a iaculis odio placerat vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit
+          amet ipsum. Duis commodo nibh et rhoncus mattis.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui,
+          a iaculis odio placerat vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit
+          amet ipsum. Duis commodo nibh et rhoncus mattis.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui,
+          a iaculis odio placerat vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit
+          amet ipsum. Duis commodo nibh et rhoncus mattis.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui,
+          a iaculis odio placerat vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit
+          amet ipsum. Duis commodo nibh et rhoncus mattis.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sollicitudin arcu dui,
+          a iaculis odio placerat vitae. Quisque vitae lectus eu tellus malesuada dictum nec sit
+          amet ipsum. Duis commodo nibh et rhoncus mattis.
+        </span>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-between items-center">
+      <label
+        for="modal-toggle"
+        (click)="paymentS.acceptCondition()"
+        class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer text-sm"
+      >
         Agree
-
       </label>
 
-      <label for="modal-toggle"
-             class=" bg-red-500 hover:bg-gray-300 px-4 py-2 rounded cursor-pointer">
+      <label
+        for="modal-toggle"
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded cursor-pointer text-sm"
+      >
         Decline
       </label>
     </div>
-
   </div>
 </div>
